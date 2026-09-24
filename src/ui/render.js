@@ -72,24 +72,10 @@ function topbar(s, extra = "") {
   `;
 }
 
-function citySVG() {
-  return `
-    <svg class="cityscape" viewBox="0 0 720 140" fill="none">
-      <path d="M0 118h720" stroke="#c9ae86" stroke-opacity=".5"/>
-      <rect x="80" y="58" width="70" height="60" fill="#8b3a2a"/>
-      <rect x="160" y="38" width="56" height="80" fill="#c45c26"/>
-      <polygon points="160,38 188,12 216,38" fill="#d4a84b"/>
-      <rect x="230" y="50" width="90" height="68" fill="#0c3d42"/>
-      <rect x="250" y="64" width="18" height="24" fill="#1a9b8e"/>
-      <rect x="278" y="64" width="18" height="24" fill="#1a9b8e"/>
-      <rect x="340" y="28" width="48" height="90" fill="#8b3a2a"/>
-      <circle cx="364" cy="22" r="14" fill="#e8a317"/>
-      <rect x="400" y="46" width="120" height="72" fill="#c45c26"/>
-      <path d="M400 46h120l-20-22h-80z" fill="#d4a84b"/>
-      <rect x="540" y="62" width="80" height="56" fill="#0c3d42"/>
-      <circle cx="580" cy="54" r="10" fill="#7ed9cc"/>
-    </svg>
-  `;
+const TITLE_CITY = new URL("../assets/title-city.png", import.meta.url).href;
+
+function cityArt() {
+  return `<figure class="cityscape"><img src="${TITLE_CITY}" alt="Aljama, ciudad-caravana de teja y faroles" /></figure>`;
 }
 
 function titleView(s) {
@@ -99,7 +85,7 @@ function titleView(s) {
         <div class="sun"></div>
         <h1>Aljama</h1>
         <div class="sub">Caminantes del Velo</div>
-        ${citySVG()}
+        ${cityArt()}
         <p class="lead">
           En el borde del desierto de cristal-arena se alza una ciudad-caravana de teja,
           turquesa y faroles. Cuatro caminantes bajan a los templos que el último eclipse
